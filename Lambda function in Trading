@@ -1,0 +1,40 @@
+# Lambda construct with a single argument
+x = [23,34,55]
+func = lambda x: max(x)
+print (func(x))
+
+# Lambda construct with multiple arguments
+price,volume = 60,20
+func = lambda price,volume: price/volume
+print(func(price,volume))
+
+# Lambda construct with logical operators
+signal = "SELL"
+func = lambda x: x>50 and signal == "BUY"
+func(65)
+
+# Lambda construct with conditional expressions like the if..else statement and comparison operators
+func = lambda x: "BUY" if x > 45 else "SELL"
+signal = func(65)
+print(signal)
+
+# We can also construct lambda with multiple if..else statements in the following manner
+func = lambda x: "BUY" if x <=  30 else "SELL" if x>= 70 else "None"
+signal = func(65)
+print(signal)
+
+# The filter function is used to extract each element in the iterable object
+# for which the function returns True. In this case, we will define the function
+# using the lambda construct and apply the filter function
+
+Signal = ['Buy','Sell', None, 'Sell', 'Sell', 'Sell']
+list(filter(lambda x: x == 'Buy' or x == 'Sell', Signal))
+
+# The reduce function is a unique function which reduces the input list to a single value
+# by calling the function provided as part of the argument.  The reduce function by default
+# starts from the first value of the list and passes the current output along the next item
+# from the list.
+
+from functools import reduce
+reduce((lambda x,y: x+y),[2,1.35,-2.4,3])
+
