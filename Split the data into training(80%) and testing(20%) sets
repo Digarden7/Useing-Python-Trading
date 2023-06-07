@@ -1,0 +1,6 @@
+#Split the data into training(80%) and testing(20%) sets
+l = len(df['Last'])
+x_train = x[:int(0.8*l)]
+y_train = y[:int(0.8*l)]
+x_test= x[int(0.8*l):]
+y_test = y[int(0.8*l):]
